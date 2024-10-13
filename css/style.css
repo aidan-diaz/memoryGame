@@ -1,0 +1,110 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.game, .gameContainer, .scoreBoard, div, .goodButton {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+.game {
+  gap: 20px;
+  justify-content: center;
+  max-width: 640px;
+}
+header, .scoreBoard {
+  height: 100px;
+  line-height: 100px;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+}
+/* .sec {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  align-self: center;
+  
+} */
+div {
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 100px;
+  max-width: 100px;
+  min-width: 100px;
+  flex: 0 0 15%;
+  background: radial-gradient(circle, #0D446C, #167DC6);
+  background-size: contain;
+}
+div:hover {
+  cursor: crosshair;
+}
+
+.goodButton, .game{
+  padding-top: 10px;
+}
+.goodButton button {
+  padding: 10px;
+  background: grey;
+  border: 2px solid black;
+  color: whitesmoke;
+}
+button:hover {
+  color: blue;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px red;
+}
+/* Define the flip animation */
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+    background: radial-gradient(circle, #0D446C, #167DC6);
+  }
+  to {
+    transform: rotateY(180deg);
+    background: red;
+  }
+}
+
+/* Apply the flip animation to the target element */
+.target.flipped {
+  animation: flip 0.25s linear;
+  transform-style: preserve-3d;
+}
+
+/* MEDIA QUERIES
+ */
+
+@media screen and (max-width: 580px) {
+  div {
+  max-width: 55px;
+  min-width: 55px;
+  height: 55px;
+  }
+  .scoreBoard, h2 {
+    display: block;
+    width: 100%;
+    line-height: 30px;
+  }
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
